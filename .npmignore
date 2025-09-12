@@ -1,0 +1,42 @@
+# Source files
+src/
+tests/
+
+# Configuration files
+.eslintrc.json
+.gitignore
+.prettierrc
+tsconfig.json
+tsup.config.ts
+vitest.config.ts
+
+# Development files
+*.log
+*.tsbuildinfo
+.DS_Store
+.env*
+.vscode/
+.idea/
+
+# Documentation
+CLAUDE.md
+docs/
+
+# Git
+.git/
+.github/
+.husky/
+
+# Build artifacts (keep dist)
+# dist/ is needed for npm package
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Misc
+tmp/
+temp/
+*.swp
+*.swo
+*.bak
