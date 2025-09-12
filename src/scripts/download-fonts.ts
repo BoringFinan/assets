@@ -3,9 +3,10 @@
  * This can be used by consuming projects to download font assets
  */
 
-import * as https from 'https';
-import * as fs from 'fs';
-import * as path from 'path';
+import https from 'https';
+import fs from 'fs';
+import path from 'path';
+import { IncomingMessage } from 'http';
 
 interface FileToDownload {
   url: string;
@@ -68,7 +69,7 @@ function downloadFile(url: string, destPath: string): Promise<void> {
     // eslint-disable-next-line no-console
     console.log(`Downloading ${path.basename(destPath)} from ${url}...`);
 
-    const handleResponse = (response: https.IncomingMessage): void => {
+    const handleResponse = (response: IncomingMessage): void => {
       if (response.statusCode !== 200) {
         const errorMsg = `Failed to download ${path.basename(destPath)}: ${response.statusCode} ${response.statusMessage}`;
         console.error(errorMsg);
@@ -100,7 +101,7 @@ function downloadFile(url: string, destPath: string): Promise<void> {
     };
 
     // Make the HTTPS request
-    https.get(url, (response: https.IncomingMessage) => {
+    https.get(url, (response: IncomingMessage) => {
       // Handle redirects
       if (response.statusCode === 302 || response.statusCode === 301) {
         // eslint-disable-next-line no-console
