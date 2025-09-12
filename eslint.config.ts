@@ -2,17 +2,19 @@ import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import type { TSESLint } from '@typescript-eslint/utils';
 
 export default tseslint.config(
     {
       ignores: [
         'dist',
         'node_modules',
+        'coverage',
         '*.config.ts',
         '*.config.js',
+        'eslint.config.ts',
         '*.tsbuildinfo',
-        'index.d.ts',
-        'tests/**/*'
+        'index.d.ts'
       ],
     },  
   js.configs.recommended,

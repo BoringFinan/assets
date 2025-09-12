@@ -23,15 +23,7 @@
       "@types/*": ["src/types/*"],
       "@theme/*": ["src/theme/*"],
       "@auth/*": ["src/auth/*"],
-      "@testing/*": ["src/testing/*"],
-      "@assets/*": ["src/assets/*"],
-      "@logos/*": ["src/assets/logos/*"],
-      "@img/*": ["src/assets/img/*"],
-      "@favicon/*": ["src/assets/favicon/*"],
-      "@people/*": ["src/assets/img/people/*"],
-      "@providers/*": ["src/assets/img/providers/*"],
-      "@backgrounds/*": ["src/assets/img/backgrounds/*"],
-      "@misc/*": ["src/assets/img/misc/*"]
+      "@testing/*": ["src/testing/*"]
     },
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
@@ -41,6 +33,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx"]
+  "include": ["src/**/*", "tests/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

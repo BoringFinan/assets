@@ -2,7 +2,7 @@
  * @vitest-environment node
  */
 
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import fs from 'fs';
 import https from 'https';
 import path from 'path';
@@ -73,7 +73,7 @@ describe('downloadFontAwesomeAssets', () => {
       mockFs.existsSync.mockReturnValue(true);
       
       // Mock HTTPS to prevent actual network calls but allow function to run
-      mockHttps.get.mockReturnValue({ on: vi.fn() } as any);
+      mockHttps.get.mockReturnValue({ on: vi.fn() } as ReturnType<typeof https.get>);
       
       // Call without awaiting to just test the setup logic
       downloadFontAwesomeAssets().catch(() => {
@@ -85,7 +85,7 @@ describe('downloadFontAwesomeAssets', () => {
 
     it('should create directory if it does not exist', () => {
       mockFs.existsSync.mockReturnValue(false);
-      mockHttps.get.mockReturnValue({ on: vi.fn() } as any);
+      mockHttps.get.mockReturnValue({ on: vi.fn() } as ReturnType<typeof https.get>);
       
       downloadFontAwesomeAssets(mockTargetDir).catch(() => {
         // Expected to fail with mocked modules
@@ -96,7 +96,7 @@ describe('downloadFontAwesomeAssets', () => {
 
     it('should not create directory if it already exists', () => {
       mockFs.existsSync.mockReturnValue(true);
-      mockHttps.get.mockReturnValue({ on: vi.fn() } as any);
+      mockHttps.get.mockReturnValue({ on: vi.fn() } as ReturnType<typeof https.get>);
       
       downloadFontAwesomeAssets(mockTargetDir).catch(() => {
         // Expected to fail with mocked modules
@@ -108,7 +108,7 @@ describe('downloadFontAwesomeAssets', () => {
 
   describe('file download URLs', () => {
     it('should attempt to download Font Awesome files', () => {
-      mockHttps.get.mockReturnValue({ on: vi.fn() } as any);
+      mockHttps.get.mockReturnValue({ on: vi.fn() } as ReturnType<typeof https.get>);
       
       downloadFontAwesomeAssets(mockTargetDir).catch(() => {
         // Expected to fail with mocked modules
@@ -128,7 +128,7 @@ describe('downloadFontAwesomeAssets', () => {
     });
 
     it('should generate correct file paths', () => {
-      mockHttps.get.mockReturnValue({ on: vi.fn() } as any);
+      mockHttps.get.mockReturnValue({ on: vi.fn() } as ReturnType<typeof https.get>);
       
       downloadFontAwesomeAssets(mockTargetDir).catch(() => {
         // Expected to fail with mocked modules
