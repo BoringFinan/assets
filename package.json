@@ -105,9 +105,9 @@
   },
   "homepage": "https://github.com/boring-financial/assets#readme",
   "peerDependencies": {
+    "next": "^15.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "^15.0.0",
     "tailwindcss": "^3.4.0"
   },
   "peerDependenciesMeta": {
@@ -142,5 +142,8 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "@boring-financial/assets": "link:"
   }
 }
