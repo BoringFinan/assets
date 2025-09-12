@@ -1,6 +1,6 @@
 {
   "name": "@boring-financial/assets",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Shared assets, components, and utilities for Boring Financial projects",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
