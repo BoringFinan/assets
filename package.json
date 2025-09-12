@@ -85,8 +85,7 @@
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist",
-    "prepublishOnly": "pnpm clean && pnpm lint && pnpm test && pnpm build",
-    "prepare": "husky"
+    "prepublishOnly": "pnpm clean && pnpm lint && pnpm test && pnpm build"
   },
   "keywords": [
     "boring-financial",
