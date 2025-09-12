@@ -148,9 +148,7 @@
     "node": ">=18.0.0"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "dependencies": {
-    "@boring-financial/assets": "link:"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }
