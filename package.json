@@ -9,7 +9,8 @@
   "files": [
     "dist",
     "src/assets",
-    "src/data"
+    "src/data",
+    "index.d.ts"
   ],
   "exports": {
     ".": {
@@ -62,7 +63,7 @@
       "import": "./dist/scripts/index.mjs",
       "require": "./dist/scripts/index.js"
     },
-    "./src/assets/*": "./src/assets/*",
+    "./assets/*": "./src/assets/*",
     "./logos/*": "./src/assets/logos/*",
     "./img/*": "./src/assets/img/*",
     "./favicon/*": "./src/assets/favicon/*",
