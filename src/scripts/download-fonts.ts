@@ -45,10 +45,12 @@ export async function downloadFontAwesomeAssets(targetDir?: string): Promise<voi
     }
   ];
 
+  // eslint-disable-next-line no-console
   console.log(`Downloading Font Awesome assets to ${fontsDir}...`);
 
   try {
     await Promise.all(filesToDownload.map(file => downloadFile(file.url, file.dest)));
+    // eslint-disable-next-line no-console
     console.log('All Font Awesome assets downloaded successfully.');
   } catch (error) {
     console.error('Failed to download one or more Font Awesome assets.', error);
@@ -63,9 +65,10 @@ export async function downloadFontAwesomeAssets(targetDir?: string): Promise<voi
  */
 function downloadFile(url: string, destPath: string): Promise<void> {
   return new Promise((resolve, reject) => {
+    // eslint-disable-next-line no-console
     console.log(`Downloading ${path.basename(destPath)} from ${url}...`);
 
-    const handleResponse = (response: any): void => {
+    const handleResponse = (response: https.IncomingMessage): void => {
       if (response.statusCode !== 200) {
         const errorMsg = `Failed to download ${path.basename(destPath)}: ${response.statusCode} ${response.statusMessage}`;
         console.error(errorMsg);
@@ -90,15 +93,17 @@ function downloadFile(url: string, destPath: string): Promise<void> {
       // Resolve promise when done
       file.on('finish', () => {
         file.close();
+        // eslint-disable-next-line no-console
         console.log(`${path.basename(destPath)} downloaded successfully.`);
         resolve();
       });
     };
 
     // Make the HTTPS request
-    https.get(url, (response: any) => {
+    https.get(url, (response: https.IncomingMessage) => {
       // Handle redirects
       if (response.statusCode === 302 || response.statusCode === 301) {
+        // eslint-disable-next-line no-console
         console.log(`Following redirect for ${path.basename(destPath)} to ${response.headers.location}...`);
         if (response.headers.location) {
           https.get(response.headers.location, handleResponse).on('error', (err: Error) => {
