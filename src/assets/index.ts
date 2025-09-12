@@ -10,6 +10,13 @@ export const assetPaths = {
   icons: '@boring-financial/assets/src/assets/icons',
   fonts: '@boring-financial/assets/src/assets/fonts',
   logos: '@boring-financial/assets/src/assets/logos',
+  img: '@boring-financial/assets/src/assets/img',
+  favicon: '@boring-financial/assets/src/assets/favicon',
+  // Image subcategories
+  people: '@boring-financial/assets/src/assets/img/people',
+  providers: '@boring-financial/assets/src/assets/img/providers',
+  backgrounds: '@boring-financial/assets/src/assets/img/backgrounds',
+  misc: '@boring-financial/assets/src/assets/img/misc',
 } as const;
 
 // Common asset URLs (for assets that should be loaded from CDN)

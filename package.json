@@ -1,15 +1,17 @@
 {
   "name": "@boring-financial/assets",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Shared assets, components, and utilities for Boring Financial projects",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "type": "module",
   "source": "src/index.ts",
   "files": [
     "dist",
     "src/assets",
-    "src/data"
+    "src/data",
+    "index.d.ts"
   ],
   "exports": {
     ".": {
@@ -62,7 +64,14 @@
       "import": "./dist/scripts/index.mjs",
       "require": "./dist/scripts/index.js"
     },
-    "./src/assets/*": "./src/assets/*"
+    "./assets/*": "./src/assets/*",
+    "./logos/*": "./src/assets/logos/*",
+    "./img/*": "./src/assets/img/*",
+    "./favicon/*": "./src/assets/favicon/*",
+    "./people/*": "./src/assets/img/people/*",
+    "./providers/*": "./src/assets/img/providers/*",
+    "./backgrounds/*": "./src/assets/img/backgrounds/*",
+    "./misc/*": "./src/assets/img/misc/*"
   },
   "scripts": {
     "build": "vite build",
@@ -97,9 +106,9 @@
   },
   "homepage": "https://github.com/boring-financial/assets#readme",
   "peerDependencies": {
+    "next": "^15.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "^15.0.0",
     "tailwindcss": "^3.4.0"
   },
   "peerDependenciesMeta": {
@@ -111,6 +120,7 @@
     }
   },
   "devDependencies": {
+    "@eslint/js": "^9.35.0",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
@@ -122,8 +132,10 @@
     "eslint-config-next": "^15.0.0",
     "eslint-plugin-react": "^7.37.0",
     "eslint-plugin-react-hooks": "^5.0.0",
+    "jsdom": "^26.1.0",
     "tsx": "^4.19.0",
     "typescript": "^5.6.0",
+    "typescript-eslint": "^8.43.0",
     "vite": "^5.4.0",
     "vite-plugin-dts": "^4.3.0",
     "vitest": "^2.0.0"
@@ -132,7 +144,9 @@
     "node": ">=18.0.0"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "dependencies": {
+    "@boring-financial/assets": "link:"
   }
 }
