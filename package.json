@@ -100,12 +100,12 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/boring-financial/assets.git"
+    "url": "git+https://github.com/boringfinan/assets.git"
   },
   "bugs": {
-    "url": "https://github.com/boring-financial/assets/issues"
+    "url": "https://github.com/boringfinan/assets/issues"
   },
-  "homepage": "https://github.com/boring-financial/assets#readme",
+  "homepage": "https://github.com/boringfinan/assets#readme",
   "peerDependencies": {
     "next": "^15.0.0",
     "react": "^19.0.0",
