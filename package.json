@@ -85,8 +85,7 @@
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist",
-    "prepublishOnly": "pnpm clean && pnpm lint && pnpm test && pnpm build",
-    "prepare": "husky"
+    "prepublishOnly": "pnpm clean && pnpm lint && pnpm test && pnpm build"
   },
   "keywords": [
     "boring-financial",
@@ -148,9 +147,7 @@
     "node": ">=18.0.0"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
-  "dependencies": {
-    "@boring-financial/assets": "link:"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   }
 }
