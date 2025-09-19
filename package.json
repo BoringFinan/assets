@@ -1,6 +1,6 @@
 {
   "name": "@boringfinan/assets",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Shared assets, components, and utilities for Boring Financial projects",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -150,7 +150,5 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "dependencies": {
-    "@boringfinan/assets": "link:"
-  }
+  "dependencies": {}
 }
